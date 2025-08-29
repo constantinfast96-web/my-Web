@@ -1,0 +1,19 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About us",
+    "digital": "Digital Presence",
+    "data": "Data & AI",
+    "cloud": "Cloud Integration",
+    "training": "Training & Consulting",
+    "faq": "Help / FAQ",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Delivering Digital Excellence",
+    "subtitle": "We connect European communication with the efficiency of an international team. From modern web presences to data-science solutions and cloud integrations — all from a single source."
+  },
+  "cta": {
+    "learnMore": "Learn more"
+  }
+}

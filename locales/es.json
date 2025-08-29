@@ -1,0 +1,19 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre nosotros",
+    "digital": "Presencia digital",
+    "data": "Datos y IA",
+    "cloud": "Integración en la nube",
+    "training": "Formación y consultoría",
+    "faq": "Ayuda / FAQ",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "title": "Entregando excelencia digital",
+    "subtitle": "Conectamos la comunicación europea con la eficiencia de un equipo internacional. Desde sitios web modernos hasta soluciones de ciencia de datos e integraciones en la nube — todo en un solo lugar."
+  },
+  "cta": {
+    "learnMore": "Saber más"
+  }
+}

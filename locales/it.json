@@ -1,0 +1,19 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "Chi siamo",
+    "digital": "Presenza digitale",
+    "data": "Dati e IA",
+    "cloud": "Integrazione cloud",
+    "training": "Formazione e consulenza",
+    "faq": "Aiuto / FAQ",
+    "contact": "Contatti"
+  },
+  "hero": {
+    "title": "Eccellenza digitale",
+    "subtitle": "Colleghiamo la comunicazione europea con l’efficienza di un team internazionale. Dai siti web moderni alle soluzioni di data science fino alle integrazioni cloud — tutto da un’unica fonte."
+  },
+  "cta": {
+    "learnMore": "Scopri di più"
+  }
+}

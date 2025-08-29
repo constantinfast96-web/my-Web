@@ -1,0 +1,17 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "Über uns",
+    "digital": "Digital Presence & Marketing",
+    "data": "Data & AI",
+    "cloud": "Cloud Integration",
+    "training": "Training & Consulting",
+    "faq": "Hilfe / FAQ",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "title": "Digitale Exzellenz liefern",
+    "subtitle": "Wir verbinden europäische Kommunikation mit der Effizienz eines internationalen Teams. Von modernen Webauftritten über Data-Science-Lösungen bis hin zu Cloud-Integrationen – alles aus einer Hand.",
+    "cta": "Mehr erfahren"
+  }
+}
