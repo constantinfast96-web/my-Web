@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<!--
+  NextGen Digital Solutions – Startseite
+
+  Diese HTML‑Datei definiert die Startseite (Index) für die fiktive Agentur "NextGen Digital Solutions".
+  Sie bindet eine externe CSS‑Datei zur Gestaltung und eine JavaScript‑Datei für Interaktivität ein.
+
+  Die Seite ist so aufgebaut, dass sie mehrere Schichten abbildet: ein fixiertes Header‑Menü mit
+  Logo und Navigation, ein Hero‑Bereich als Einstieg, gefolgt von mehreren Abschnitten für die
+  unterschiedlichen Leistungsbereiche (Digital Presence & Marketing, Data & AI, Cloud & Integration
+  sowie Training & Consulting). Es gibt außerdem einen Kontaktbereich am Ende. Über Ankerlinks
+  können die Besucher komfortabel durch die Abschnitte navigieren; durch das in scripts.js
+  implementierte Scroll‑Highlighting wird der aktuelle Menüpunkt hervorgehoben. Jeder Abschnitt
+  verwendet die Klasse „hidden“, damit er per IntersectionObserver weich eingeblendet wird.
+-->
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NextGen Digital Solutions – Digitale Exzellenz</title>
+    <!-- Verweise auf CSS für Design und Layout -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- JavaScript für Navigation, Animationen und Menüfunktionen -->
+    <script defer src="scripts.js"></script>
+  </head>
+  <body>
+    <!-- Header mit Logo und Navigation -->
+    <header>
+      <div class="container">
+        <a href="#home" class="logo">
+          <img
+            src="9edc5107-38d0-488c-989f-6db05046e950.png"
+            alt="NextGen Digital Solutions Logo"
+          />
+        </a>
+        <nav>
+          <ul>
+            <li><a href="#home" class="active" data-i18n="nav.home">Home</a></li>
+            <!-- Link zu "Über uns"‑Bereich -->
+            <li><a href="#about" data-i18n="nav.about">Über&nbsp;uns</a></li>
+            <li><a href="#digital" data-i18n="nav.digital">Digital&nbsp;Presence</a></li>
+            <li><a href="#data" data-i18n="nav.data">Data&nbsp;&&nbsp;AI</a></li>
+            <li><a href="#cloud" data-i18n="nav.cloud">Cloud&nbsp;Integration</a></li>
+            <li><a href="#training" data-i18n="nav.training">Training&nbsp;&&nbsp;Consulting</a></li>
+            <!-- Hilfe / FAQ – kombiniert Fragen & Antworten in einem Abschnitt -->
+            <li><a href="#faq" data-i18n="nav.faq">Hilfe&nbsp;/&nbsp;FAQ</a></li>
+            <li><a href="#contact" data-i18n="nav.contact">Kontakt</a></li>
+            <!-- Sprach‑Dropdown für Mehrsprachigkeit -->
+            <li class="nav-dropdown">
+              <button class="nav-dropbtn" aria-haspopup="true" aria-expanded="false">
+                <span class="current-lang-label">Deutsch</span>
+                <svg class="chev" viewBox="0 0 20 20" aria-hidden="true">
+                  <path d="M5 7l5 6 5-6H5z"></path>
+                </svg>
+              </button>
+              <ul class="nav-dropdown-menu" role="menu">
+                <li><button role="menuitem" data-lang="de">Deutsch</button></li>
+                <li><button role="menuitem" data-lang="en">English</button></li>
+                <li><button role="menuitem" data-lang="es">Español</button></li>
+                <li><button role="menuitem" data-lang="it">Italiano</button></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <!-- Hamburger‑Icon für mobile Geräte -->
+        <button class="menu-toggle" aria-label="Menü umschalten">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Hero‑Abschnitt -->
+    <section id="home" class="hero hidden">
+      <!-- Video‑Hintergrund: Läuft automatisch, ohne Ton, in Dauerschleife. -->
+      <video class="hero-video" autoplay loop muted playsinline>
+        <source src="hero-video.mp4" type="video/mp4" />
+        Ihr Browser unterstützt dieses Videoformat nicht.
+      </video>
+
+      <div class="hero-content">
+        <h1 data-i18n="hero.title">Delivering Digital&nbsp;Excellence</h1>
+        <p data-i18n="hero.subtitle">
+          Wir verbinden europäische Kommunikation mit der Effizienz eines internationalen Teams.
+          Von modernen Webauftritten über Data‑Science‑Lösungen bis hin zu Cloud‑Integrationen –
+          alles aus einer Hand.
+        </p>
+        <a href="#digital" class="btn-primary" data-i18n="hero.cta">Mehr erfahren</a>
+      </div>
+    </section>
+
+    <!-- Abschnitt: Hilfe / FAQ -->
+    <section id="faq" class="service-section hidden">
+      <div class="container">
+        <h2>Hilfe &amp; FAQ</h2>
+        <div class="faq-list">
+          <details>
+            <summary>Wie kann ich NextGen Digital Solutions kontaktieren?</summary>
+            <p>
+              Sie können unser Kontaktformular nutzen oder uns per E‑Mail erreichen. Wir
+              melden uns werktags innerhalb von 24&nbsp;Stunden bei Ihnen.
+            </p>
+          </details>
+          <details>
+            <summary>Welche Services bietet ihr an?</summary>
+            <p>
+              Unser Portfolio umfasst Webentwicklung, E‑Commerce, digitales Marketing, Data
+              Science, Künstliche&nbsp;Intelligenz, Cloud‑Integrationen sowie Training und Beratung.
+            </p>
+          </details>
+          <details>
+            <summary>Wie schnell liefert ihr Projekte?</summary>
+            <p>
+              Die Projektlaufzeit hängt vom Umfang ab. Kleinere Webseiten sind innerhalb
+              weniger Wochen fertig, komplexe Data‑Science‑Projekte können mehrere Monate
+              dauern. Wir definieren Meilensteine transparent im Voraus.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Abschnitt: Über uns -->
+    <section id="about" class="service-section alt hidden">
+      <div class="container">
+        <h2>Über&nbsp;uns</h2>
+        <p>
+          NextGen Digital Solutions ist eine internationale Agentur, die Unternehmen dabei hilft,
+          ihre digitale Präsenz zu erweitern und datengetriebene Entscheidungen zu treffen. Unser
+          Team verbindet europäische Beratungskompetenz mit der Effizienz von Experten aus
+          Argentinien. Wir setzen auf klare Kommunikation, faire Preise und messbare Ergebnisse.
+        </p>
+        <!-- Platzhalter für persönliches Vorstellungsvideo (YouTube‑Embed) -->
+        <div class="video-container">
+          <!-- Ersetzen Sie 'VIDEO_ID' durch die ID Ihres persönlichen Vorstellungsvideos auf YouTube -->
+          <iframe
+            src="https://www.youtube.com/embed/VIDEO_ID"
+            title="Vorstellungsvideo"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <!-- Team‑Profile: Drei Platzhalter für Mitarbeiter mit Bild, Name, Alter und Beschreibung -->
+        <div class="team-profiles">
+          <div class="team-member">
+            <img src="team-placeholder.png" alt="Mitarbeiter 1" />
+            <h3>Name Mitarbeiter&nbsp;1</h3>
+            <p class="age">Alter: 30</p>
+            <p class="description">
+              Kurze Beschreibung des Mitarbeiters. Hier können Qualifikationen, Aufgabenbereiche
+              und persönliche Stärken beschrieben werden.
+            </p>
+          </div>
+          <div class="team-member">
+            <img src="team-placeholder.png" alt="Mitarbeiter 2" />
+            <h3>Name Mitarbeiter&nbsp;2</h3>
+            <p class="age">Alter: 35</p>
+            <p class="description">
+              Kurze Beschreibung des Mitarbeiters. Hier können Qualifikationen, Aufgabenbereiche
+              und persönliche Stärken beschrieben werden.
+            </p>
+          </div>
+          <div class="team-member">
+            <img src="team-placeholder.png" alt="Mitarbeiter 3" />
+            <h3>Name Mitarbeiter&nbsp;3</h3>
+            <p class="age">Alter: 28</p>
+            <p class="description">
+              Kurze Beschreibung des Mitarbeiters. Hier können Qualifikationen, Aufgabenbereiche
+              und persönliche Stärken beschrieben werden.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Abschnitt: Digital Presence & Marketing -->
+    <section id="digital" class="service-section hidden">
+      <div class="container">
+        <h2>Digital&nbsp;Presence & Marketing</h2>
+        <div class="services-grid">
+          <article>
+            <h3>Webauftritte</h3>
+            <p>
+              Moderne, mobiloptimierte Websites, die Eindruck hinterlassen und Besucher in
+              Kunden verwandeln. Wir entwickeln maßgeschneiderte Corporate‑Seiten und
+              Landingpages.
+            </p>
+          </article>
+          <article>
+            <h3>Online‑Shops</h3>
+            <p>
+              Maßgeschneiderte E‑Commerce‑Lösungen auf Basis von Shopify, WooCommerce oder
+              Magento – von der Produktpräsentation bis zum Checkout für ein perfektes
+              Einkaufserlebnis.
+            </p>
+          </article>
+          <article>
+            <h3>Marketing & Automation</h3>
+            <p>
+              Integration von Marketing‑Tools und Zahlungssystemen sowie gezielte
+              Performance‑Marketing‑Kampagnen (SEO, Google Ads, Meta Ads) – alles aus einer
+              Hand.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Abschnitt: Data & AI Solutions -->
+    <section id="data" class="service-section alt hidden">
+      <div class="container">
+        <h2>Data&nbsp;Science & Künstliche&nbsp;Intelligenz</h2>
+        <div class="services-grid">
+          <article>
+            <h3>Business Intelligence</h3>
+            <p>
+              Interaktive Dashboards, KPI‑Analysen und Datenvisualisierung für
+              faktenbasierte Entscheidungen in Echtzeit.
+            </p>
+          </article>
+          <article>
+            <h3>Data Science</h3>
+            <p>
+              Von Kundensegmentierung über Prognosemodelle bis zur Prozessoptimierung – wir
+              heben das Potenzial Ihrer Daten.
+            </p>
+          </article>
+          <article>
+            <h3>KI‑Lösungen</h3>
+            <p>
+              Chatbots, Recommendation Engines und Machine‑Learning‑Modelle für konkrete
+              Wettbewerbsvorteile.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Abschnitt: Cloud & Integration -->
+    <section id="cloud" class="service-section hidden">
+      <div class="container">
+        <h2>Cloud & Integration</h2>
+        <div class="services-grid">
+          <article>
+            <h3>Cloud‑Migration</h3>
+            <p>
+              Sichere und effiziente Migration in die Cloud (AWS, Azure, Google Cloud) mit
+              skalierbaren Systemen für die Zukunft.
+            </p>
+          </article>
+          <article>
+            <h3>Datenbanken & API</h3>
+            <p>
+              Vernetzung Ihrer Systeme durch Datenbankmanagement und API‑Integrationen für
+              reibungslose Prozesse.
+            </p>
+          </article>
+          <article>
+            <h3>Sicherheit & Compliance</h3>
+            <p>
+              Implementierung von Sicherheitsstandards und DSGVO‑konformen Lösungen zum Schutz
+              Ihrer Daten.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Abschnitt: Training & Consulting -->
+    <section id="training" class="service-section alt hidden">
+      <div class="container">
+        <h2>Training & Consulting</h2>
+        <div class="services-grid">
+          <article>
+            <h3>Digitale&nbsp;Strategie</h3>
+            <p>
+              Entwicklung maßgeschneiderter Strategien für Ihre digitale Transformation –
+              praxisnah und umsetzungsorientiert.
+            </p>
+          </article>
+          <article>
+            <h3>Workshops & Schulungen</h3>
+            <p>
+              Data Literacy, KI im Alltag, Digital Leadership – wir machen Ihre Teams fit für
+              die Zukunft.
+            </p>
+          </article>
+          <article>
+            <h3>Projektbegleitung</h3>
+            <p>
+              Begleitung von der ersten Idee bis zum erfolgreichen Projektabschluss mit
+              persönlicher Beratung.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+	
+<!-- Abschnitt: Kundenbewertungen -->
+<section id="testimonials" class="service-section hidden">
+  <div class="container">
+    <h2>Kundenbewertungen</h2>
+    <div class="testimonials-grid">
+      
+      <article class="testimonial">
+        <p class="quote">
+          “NextGen Digital Solutions hat unsere Website neu aufgebaut – seitdem
+          haben wir doppelt so viele Anfragen!”
+        </p>
+        <div class="stars" data-rating="4.5" aria-label="4,5 von 5 Sternen"></div>
+        <p class="author">– Anna M., Marketing Managerin</p>
+      </article>
+
+      <article class="testimonial">
+        <p class="quote">
+          “Sehr professionelle Zusammenarbeit, transparente Kommunikation und tolle Ergebnisse.”
+        </p>
+        <div class="stars" data-rating="5" aria-label="5 von 5 Sternen"></div>
+        <p class="author">– Peter S., Geschäftsführer</p>
+      </article>
+
+      <article class="testimonial">
+        <p class="quote">
+          “Dank der BI-Dashboards haben wir endlich einen klaren Überblick über unsere Kennzahlen.”
+        </p>
+        <div class="stars" data-rating="4" aria-label="4 von 5 Sternen"></div>
+        <p class="author">– Laura T., Head of Sales</p>
+      </article>
+<div class="testimonial-form">
+  <h3>Eigene Bewertung abgeben</h3>
+  <form id="reviewForm">
+    <div class="form-group">
+      <label for="reviewName">Name</label>
+      <input type="text" id="reviewName" name="name" placeholder="Ihr Name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="reviewRating">Bewertung</label>
+      <select id="reviewRating" name="rating" required>
+        <option value="5">★★★★★ (5)</option>
+        <option value="4">★★★★☆ (4)</option>
+        <option value="3">★★★☆☆ (3)</option>
+        <option value="2">★★☆☆☆ (2)</option>
+        <option value="1">★☆☆☆☆ (1)</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="reviewText">Kommentar</label>
+      <textarea id="reviewText" name="comment" rows="4" placeholder="Ihr Feedback..." required></textarea>
+    </div>
+
+    <button type="submit" class="btn-primary">Absenden</button>
+  </form>
+</div>
+    </div>
+  </div>
+</section>
+  
+    <!-- Kontaktabschnitt -->
+    <section id="contact" class="contact-section hidden">
+      <div class="container">
+        <h2>Kontakt</h2>
+        <p>
+          Bereit, Ihr Unternehmen digital auf das nächste Level zu bringen? Schreiben Sie uns
+          eine Nachricht – wir freuen uns auf Ihre Anfrage.
+        </p>
+        <form class="contact-form" onsubmit="return false;">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Ihr Name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">E-Mail</label>
+            <input type="email" id="email" name="email" placeholder="Ihre E-Mail" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Nachricht</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Wie können wir helfen?"
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="btn-primary">Nachricht senden</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <p>&copy; <!-- current year will be eingefügt via JS --> <span id="current-year"></span> NextGen Digital Solutions</p>
+        <!-- Social Media Links -->
+        <div class="social-links">
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/IhrAccount" target="_blank" aria-label="Instagram">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 16 16"
+              fill="currentColor"
+            >
+              <path
+                d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"
+              />
+            </svg>
+          </a>
+          <!-- Facebook -->
+          <a href="https://www.facebook.com/IhrAccount" target="_blank" aria-label="Facebook">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 16 16"
+              fill="currentColor"
+            >
+              <path
+                d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"
+              />
+            </svg>
+          </a>
+          <!-- X / Twitter -->
+          <a href="https://twitter.com/IhrAccount" target="_blank" aria-label="X/Twitter">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 16 16"
+              fill="currentColor"
+            >
+              <path
+                d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334q.002-.211-.006-.422A6.7 6.7 0 0 0 16 3.542a6.7 6.7 0 0 1-1.889.518 3.3 3.3 0 0 0 1.447-1.817 6.5 6.5 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.32 9.32 0 0 1-6.767-3.429 3.29 3.29 0 0 0 1.018 4.382A3.3 3.3 0 0 1 .64 6.575v.045a3.29 3.29 0 0 0 2.632 3.218 3.2 3.2 0 0 1-.865.115 3 3 0 0 1-.614-.057 3.28 3.28 0 0 0 3.067 2.277A6.6 6.6 0 0 1 .78 13.58a6 6 0 0 1-.78-.045A9.34 9.34 0 0 0 5.026 15"
+              />
+            </svg>
+          </a>
+          <!-- YouTube -->
+          <a href="https://www.youtube.com/IhrAccount" target="_blank" aria-label="YouTube">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 16 16"
+              fill="currentColor"
+            >
+              <path
+                d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"
+              />
+            </svg>
+          </a>
+        </div>
+        <!-- Rechtliche Links -->
+        <div class="legal-links">
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutzerklaerung.html">Datenschutzerklärung</a>
+          <a href="nutzungsbedingungen.html">Nutzungsbedingungen</a>
+          <a href="cookie-richtlinien.html">Cookie‑Richtlinien</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
