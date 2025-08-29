@@ -753,6 +753,65 @@ nav a:hover {
     margin-top: 0.5rem;
   }
 }
+
+/* Kundenbewertungen */
+.testimonials-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.testimonial {
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px var(--color-shadow);
+  text-align: center;
+}
+
+.testimonial .quote {
+  font-style: italic;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+}
+
+.testimonial .author {
+  margin-top: 1rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+/* Sternebewertung */
+.stars {
+  position: relative;
+  display: inline-block;
+  height: 24px;
+  margin: 0.5rem auto;
+}
+
+.stars-row {
+  display: flex;
+  gap: 2px;
+}
+
+.stars-row svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.stars-bg {
+  color: var(--color-muted);
+}
+
+.stars-fg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  color: #ffd700; /* Gold */
+}
 /* Formular für eigene Bewertungen */
 .testimonial-form {
   margin-top: 3rem;
