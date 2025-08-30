@@ -165,6 +165,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 document.addEventListener("DOMContentLoaded", () => {
+  limitTestimonials();
   initStarRatings();
 });
 
@@ -202,7 +203,17 @@ function initStarRatings() {
     const pct = (rating / 5) * 100;
     fg.style.width = pct + "%";
   });
-}document.addEventListener("DOMContentLoaded", () => {
+}
+
+function limitTestimonials(max = 6) {
+  const grid = document.querySelector(".testimonials-grid");
+  if (!grid) return;
+  while (grid.children.length > max) {
+    grid.removeChild(grid.lastElementChild);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
   const reviewForm = document.getElementById("reviewForm");
   if (reviewForm) {
     reviewForm.addEventListener("submit", e => {
@@ -223,8 +234,12 @@ function initStarRatings() {
         <p class="author">– ${name}</p>
       `;
 
-      // In Grid einfügen
-      document.querySelector(".testimonials-grid").appendChild(article);
+      // In Grid einfügen (neuestes zuerst)
+      const grid = document.querySelector(".testimonials-grid");
+      grid.prepend(article);
+
+      // Nur die 6 neuesten Bewertungen behalten
+      limitTestimonials();
 
       // Sterne initialisieren
       initStarRatings();
