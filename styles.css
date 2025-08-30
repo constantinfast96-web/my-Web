@@ -802,7 +802,7 @@ nav a:hover {
 }
 
 .stars-bg {
-  visibility: hidden;
+  opacity: 0; /* Hide grey background stars */
 }
 
 .stars-fg {
