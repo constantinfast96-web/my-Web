@@ -795,15 +795,7 @@ nav a:hover {
   gap: 2px;
 }
 
-.stars-row svg {
-  width: 24px;
-  height: 24px;
-  fill: currentColor;
-}
 
-.stars-bg {
-  opacity: 0; /* Hide grey background stars */
-}
 
 .stars-fg {
   position: absolute;
